@@ -99,12 +99,19 @@ function seleccionDiv() {
         default: document.write("<p>Opcion no válida</p>")
 
     }
-    
+
 
 }
 seleccionDiv()
 let otra = prompt("¿Desea otra operación? (SI/NO)")
-    while (otra.toUpperCase() == "SI"){
+if (otra.toUpperCase() == "NO") {
+    document.write("<p>Gracias por utilizar el conversor</p>")
+    document.write("<p>=====================================</p>")
+} else {
+    while (otra.toUpperCase() == "SI") {
         seleccionDiv();
         otra = prompt("¿Desea otra operación? (SI/NO)")
     }
+    document.write("<p>Gracias por utilizar el conversor</p>")
+    document.write("<p>=====================================</p>")
+}   
