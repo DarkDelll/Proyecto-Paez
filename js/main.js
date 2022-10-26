@@ -80,7 +80,7 @@ function menuOpciones() {
     document.write("<p> USD (Dolar Estadounidense)</p>")
     document.write("<p> CLP (Peso Chileno)</p>")
     document.write("<p> EUR (Euro)</p>")
-    document.write("<p> ARG (Peso Argentino)</p>")
+    document.write("<p> ARS (Peso Argentino)</p>")
     document.write("<p>PARA FINALIZAR INGRESAR SALIR</p>")
 }
 
