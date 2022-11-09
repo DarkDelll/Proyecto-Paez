@@ -1,115 +1,46 @@
 //alert()
-let moneda
-function seleccionARS() {
-    cant = prompt("¿Cuantos ARS?")
-    div = prompt("Convertir a")
-    switch (div.toUpperCase()) {
-        case "USD": moneda = Math.trunc(Number(cant) / 155.08) + " DOLARES AMERICANOS"
-            break
-        case "EUR": moneda = Math.trunc(Number(cant) / 155.08) + " EUROS"
-            break
-        case "CLP": moneda = Math.trunc(Number(cant) * 6.24) + " PESOS CHILENOS"
-            break
-        case "SALIR": break
-        default: document.write("<p>Opcion no válida</p>")
+document.write("<p>----------------------</p>")
+document.write("<p>MONEDAS</p>")
+document.write("<p> USD (Dolar Estadounidense)</p>")
+document.write("<p> CLP (Peso Chileno)</p>")
+document.write("<p> EUR (Euro)</p>")
+document.write("<p> ARS (Peso Argentino)</p>")
+let valor1
+let valor2
+let cantidad
+let moneda1
+let moneda2
+const monedas = [{ moneda: 'USD', valor: 1 },
+{ moneda: 'EUR', valor: 1 },
+{ moneda: 'ARS', valor: 159.72 },
+{ moneda: 'CLP', valor: 905 }]
+function buscarmoneda() {
+    moneda1 = prompt("CONVERTIR (USD/EUR/ARS/CLP)")
+    moneda2 = prompt(" A (USD/EUR/ARS/CLP)")
+    cantidad = Number(prompt(" CANTIDAD"))
+    for (const moneda of monedas) {
+        if (moneda.moneda == moneda1.toUpperCase()) {
+            valor1 = moneda.valor
+        }
+        if (moneda.moneda == moneda2.toUpperCase()) {
+            valor2 = moneda.valor
+        }
     }
-    return moneda
-
+    resultado = (valor2 / valor1) * cantidad
+    return resultado
 }
-
-function seleccionEUR() {
-    cant = prompt("¿Cuantos EUR?")
-    div = prompt("Convertir a")
-    switch (div.toUpperCase()) {
-        case "CLP": moneda = Math.trunc(Number(cant) * 967.5) + " PESOS CHILENOS"
-            break
-        case "USD": moneda = Math.trunc(Number(cant) * 1) + " DOLAR AMERICANO"
-            break
-        case "ARS": moneda = Math.trunc(Number(cant) * 155.08) + " PESOS ARGENTINOS"
-            break
-        case "SALIR": break
-        default: document.write("<p>Opcion no válida</p>")
-
-    }
-    return moneda
-
-}
+buscarmoneda()
+document.write("<p>" + resultado.toFixed(2) +" "+moneda2.toUpperCase() + "</p>")
 
 
-
-function seleccionCLP() {
-    cant = prompt("¿Cuantos CLP?")
-    div = prompt("Convertir a")
-    switch (div.toUpperCase()) {
-        case "USD": moneda = Math.trunc(Number(cant) / 967.5) + " DOLARES AMERICANOS"
-            break
-        case "EUR": moneda = Math.trunc(Number(cant) / 967.5) + " EUROS"
-            break
-        case "ARS": moneda = Math.trunc(Number(cant) / 6.24) + " PESOS ARGENTINOS"
-            break
-        case "SALIR": break
-        default: document.write("<p>Opcion no válida</p>")
-
-    }
-    return moneda
-
-}
-
-function seleccionUSD() {
-    cant = prompt("¿Cuantos USD?")
-    div = prompt("Convertir a")
-    switch (div.toUpperCase()) {
-        case "CLP": moneda = Math.trunc(Number(cant) * 967.5) + " PESOS CHILENOS"
-            break
-        case "EUR": moneda = Math.trunc(Number(cant) * 1) + " EUROS"
-            break
-        case "ARS": moneda = Math.trunc(Number(cant) * 155.08) + " PESOS ARGENTINOS"
-            break
-        case "SALIR": break
-        default: document.write("<p>Opcion no válida</p>")
-
-    }
-    return moneda
-
-}
-
-
-function menuOpciones() {
-    document.write("<p>----------------------</p>")
-    document.write("<p>MONEDAS</p>")
-    document.write("<p> USD (Dolar Estadounidense)</p>")
-    document.write("<p> CLP (Peso Chileno)</p>")
-    document.write("<p> EUR (Euro)</p>")
-    document.write("<p> ARS (Peso Argentino)</p>")
-    document.write("<p>PARA FINALIZAR INGRESAR SALIR</p>")
-}
-
-function seleccionDiv() {
-    menuOpciones();
-    let div = prompt(("seleccionar Moneda"))
-    switch (div.toUpperCase()) {
-        case "USD": seleccionUSD(); document.write("<p>" + moneda + "</p>")
-            break
-        case "CLP": seleccionCLP(); document.write("<p>" + moneda + "</p>")
-            break
-        case "EUR": seleccionEUR(); document.write("<p>" + moneda + "</p>")
-            break
-        case "ARS": seleccionARS(); document.write("<p>" + moneda + "</p>")
-            break
-        default: document.write("<p>Opcion no válida</p>")
-
-    }
-
-
-}
-seleccionDiv()
 let otra = prompt("¿Desea otra operación? (SI/NO)")
 if (otra.toUpperCase() == "NO") {
     document.write("<p>Gracias por utilizar el conversor</p>")
     document.write("<p>=====================================</p>")
 } else {
     while (otra.toUpperCase() == "SI") {
-        seleccionDiv();
+        buscarmoneda()
+        document.write("<p>" + resultado.toFixed(2) +" "+moneda2.toUpperCase() + "</p>")
         otra = prompt("¿Desea otra operación? (SI/NO)")
     }
     document.write("<p>Gracias por utilizar el conversor</p>")
