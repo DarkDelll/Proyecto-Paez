@@ -6,9 +6,12 @@ let moneda1
 let moneda2
 let x = 0
 const monedas = [{ moneda: 'USD', valor: 1 },
-{ moneda: 'EUR', valor: 1 },
-{ moneda: 'ARS', valor: 159.72 },
-{ moneda: 'CLP', valor: 905 }]
+{ moneda: 'EUR', valor: 0.963695 },
+{ moneda: 'ARS', valor: 315 },
+{ moneda: 'CLP', valor: 912.25}, 
+{ moneda: 'MXN', valor: 19.3527},
+{ moneda: 'COP', valor: 4883.74},
+{ moneda: 'YEN', valor: 139.28}]
 function buscarmoneda() {
     
     for (const moneda of monedas) {
@@ -50,6 +53,13 @@ btn.addEventListener('click',(evt)=>{
     }
 
 })
+if(localStorage.length != 0){
+    for(let i=0; i<localStorage.length; i+=1 ){
+        const elementop = document.createElement("p")
+        elementop.innerHTML = localStorage.getItem("resultados"+i)
+        contenedor.appendChild(elementop)
+    }
+}
 
 const limpiar = document.getElementById("botonLimpiar")
 limpiar.addEventListener('click', (evt)=>{
