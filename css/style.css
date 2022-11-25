@@ -1,5 +1,8 @@
-body{
-    background-color:#E2FBEC;
+.cuerpo{
+    background-image: linear-gradient(to bottom,#001D4A 60%,#27476E);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 }
 h1{
     font-family: 'Times New Roman', Times, serif;
@@ -7,6 +10,7 @@ h1{
     flex-direction: column;
     text-align: center;
     font-size: 50px;
+    padding: 40px;
 }
 p{
     font-family: 'Times New Roman', Times, serif;
@@ -17,4 +21,37 @@ p{
     width: 600px;
     border: 3px solid #3100FF;
     border-radius: 30px;
+}
+.formulario{
+
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10%;
+    font-size: 25px;
+    
+}
+.formulario label{
+    padding: 10px;
+}
+.formulario input{
+    padding: 10px;
+    font-size: 29px;
+}
+.formulario select option{
+    font-size: 25px;
+}
+.formulario select{
+    font-size: 25px;
+}
+.formulario button{
+    font-size: 25px;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 15px;
+}
+.footer{
+    display: flex;
+    margin-top: 650px;
 }
