@@ -1,9 +1,10 @@
 const moneda1 = document.querySelector("#monedaUno")
 const moneda2 = document.querySelector("#monedaDos")
 const cantidad = document.querySelector("#cantidad")
+const cantidad2= document.querySelector("#cantidad2")
 
 let x = 0
-const valormonedaDoss = document.querySelector("#valormonedaDos")
+
 
 async function valormoneda(lur){
     const result = await fetch(lur)
@@ -12,7 +13,14 @@ async function valormoneda(lur){
 }
 
 function render(valori){
-    valormonedaDoss.setAttribute("value",valori.result.toFixed(2))
+    cantidad2.setAttribute("value",valori.result.toFixed(2))
+    document.getElementById("cantidad2").value = valori.result.toFixed(2)
+    
+}
+function render2(valori){
+    cantidad.setAttribute("value",valori.result.toFixed(2))
+    document.getElementById("cantidad").value = valori.result.toFixed(2)
+    
 }
 
 async function calcularCambio(){
@@ -36,10 +44,15 @@ cantidad.addEventListener('input',async ()=>{
     const monedas = await valormoneda(url)
     render(monedas)
 })
+cantidad2.addEventListener('input',async ()=>{
+    url = "https://api.exchangerate.host/convert?from="+moneda2.value+"&to="+moneda1.value+"&amount="+cantidad2.value
+    const monedas = await valormoneda(url)
+    render2(monedas)
+})
 
 function removeAllChilds(a)
  {
- var a=document.getElementById(a);
+ a = document.getElementById(a);
  while(a.hasChildNodes())
 	a.removeChild(a.firstChild);	
  }
@@ -71,7 +84,7 @@ if(localStorage.length != 0){
 }
 
 const limpiar = document.getElementById("botonLimpiar")
-limpiar.addEventListener('click', (evt)=>{
+limpiar.addEventListener('click', ()=>{
     localStorage.clear()
     removeAllChilds("res")
     x = 0

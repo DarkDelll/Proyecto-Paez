@@ -67,8 +67,19 @@ p{
 }
 
 @media screen and (max-width: 768px) {
-    .formulario{
+    .cuerpo{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }
+    .conversor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .conversor input{
+        display: flex;
+        align-items: center;
     }
 }
