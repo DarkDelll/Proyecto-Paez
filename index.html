@@ -9,34 +9,36 @@
     <title>Document</title>
 </head>
 <body class="cuerpo">
-    <section class="">
     <h1>Conversor de Divisas</h1>
-    <form action="index.html" class="formulario">
-        <label for="" >Convertir</label>
-        <input type="number" placeholder="Cantidad" id="cantidad" class="form-control-sm">
-        <select name="" id="monedaUno" class="form-control-sm">
-            <option value="USD">USD</option>
-            <option value="CLP">CLP</option>
-            <option value="EUR">EUR</option>
-            <option value="ARS">ARS</option>
-            <option value="COP">COP</option>
-            <option value="MXN">MXN</option>
-            <option value="YEN">YEN</option>
-        </select>
-        <label for="">A</label>
-        <select name="" id="monedaDos" class="form-control-sm">
-            <option value="USD">USD</option>
-            <option value="CLP">CLP</option>
-            <option value="EUR">EUR</option>
-            <option value="ARS">ARS</option>
-            <option value="COP">COP</option>
-            <option value="MXN">MXN</option>
-            <option value="YEN">YEN</option>
-        </select>
+    <section class="conversor">
         <div>
-            <button type="submit" class="btn btn-primary" id="calcular">Calcular</button>
+        <input type="number" placeholder="Cantidad" id="cantidad" class="form-control-sm" value="1">
+        <select name="" id="monedaUno" class="form-control-sm">
+            <option value="usd"selected>USD</option>
+            <option value="clp">CLP</option>
+            <option value="eur">EUR</option>
+            <option value="ars">ARS</option>
+            <option value="cop">COP</option>
+            <option value="mxn">MXN</option>
+            <option value="yen">YEN</option>
+        </select>
         </div>
-    </form>
+        <div>
+        <input type="text" id="valormonedaDos">
+        <select name="" id="monedaDos" class="form-control-sm">
+            <option value="usd">USD</option>
+            <option value="clp">CLP</option>
+            <option value="eur" selected>EUR</option>
+            <option value="ars">ARS</option>
+            <option value="cop">COP</option>
+            <option value="mxn">MXN</option>
+            <option value="yen">YEN</option>
+        </select>
+        </div>
+        <div>
+            <button  class="btn btn-primary" id="guardar">Guardar</button>
+        </div>
+        
     </section>
     <section id="res">
 
