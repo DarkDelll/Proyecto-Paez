@@ -2,7 +2,6 @@ const moneda1 = document.querySelector("#monedaUno")
 const moneda2 = document.querySelector("#monedaDos")
 const cantidad = document.querySelector("#cantidad")
 const cantidad2= document.querySelector("#cantidad2")
-
 let x = 0
 
 
@@ -22,31 +21,30 @@ function render2(valori){
     document.getElementById("cantidad").value = valori.result.toFixed(2)
     
 }
-
 async function calcularCambio(){
-    const url = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
-    const valor = await valormoneda(url)
+    const uri = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
+    const valor = await valormoneda(uri)
     render(valor)
 }
 calcularCambio()
 moneda1.addEventListener('change',async ()=>{
-    url = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
-    const monedas = await valormoneda(url)
+    const uri = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
+    const monedas = await valormoneda(uri)
     render(monedas)
 })
 moneda2.addEventListener('change',async ()=>{
-    url = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
-    const monedas = await valormoneda(url)
+    const uri = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
+    const monedas = await valormoneda(uri)
     render(monedas)
 })
 cantidad.addEventListener('input',async ()=>{
-    url = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
-    const monedas = await valormoneda(url)
+    const uri = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
+    const monedas = await valormoneda(uri)
     render(monedas)
 })
 cantidad2.addEventListener('input',async ()=>{
-    url = "https://api.exchangerate.host/convert?from="+moneda2.value+"&to="+moneda1.value+"&amount="+cantidad2.value
-    const monedas = await valormoneda(url)
+    const uri = "https://api.exchangerate.host/convert?from="+moneda2.value+"&to="+moneda1.value+"&amount="+cantidad2.value
+    const monedas = await valormoneda(uri)
     render2(monedas)
 })
 
@@ -60,8 +58,8 @@ const contenedor = document.getElementById("res")
 const btn = document.querySelector("#guardar")
 btn.addEventListener('click',async ()=>{
     removeAllChilds("res")
-    url = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
-    const monedas = await valormoneda(url)
+    const uri = "https://api.exchangerate.host/convert?from="+moneda1.value+"&to="+moneda2.value+"&amount="+cantidad.value
+    const monedas = await valormoneda(uri)
     const resultadofinal = monedas.result.toFixed(2)
     let items= cantidad.value + " " + moneda1.value + " a " + moneda2.value + " = " +resultadofinal+moneda2.value
     localStorage.setItem("resultados"+x,items)
