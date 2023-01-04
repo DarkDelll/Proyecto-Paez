@@ -1,3 +1,12 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html, body, #root{
+    height: 100%;
+}
+
 .cuerpo{
     background-image: linear-gradient(to bottom,#001D4A 60%,#27476E);
     background-repeat: no-repeat;
@@ -57,8 +66,8 @@ p{
 }
 .footer{
     display: flex;
-    margin-top: 400px;
 }
+
 #botonLimpiar{
     font-size: 24px;
     padding: 10px;
